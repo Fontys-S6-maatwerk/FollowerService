@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "qtwLFj0PPrFAiy6IDyiuwje0Z+dHtCUeLIU9j9eZpsXOZrjE5l4aSM9dhIoSEhxlzhZyFUw+tN1srakHmhB98w==",
+  "success": false,
+  "projectFilePath": "D:\\Fontys\\S6Maatwerk\\FollowerService\\FollowerService\\FollowerService.Web\\FollowerService.Web.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Swashbuckle.AspNetCore. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.VisualStudio.Azure.Containers.Tools.Targets. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
