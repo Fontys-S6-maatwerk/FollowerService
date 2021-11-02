@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace FollowerService.Web.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/")]
     public class FollowerController : ControllerBase
     {
 
@@ -21,6 +21,44 @@ namespace FollowerService.Web.Controllers
         public FollowerController(ILogger<FollowerController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet]
+        [Route("online")]
+        public string checkOnline()
+        {
+            return "Check if API is availabe";
+        }
+
+        [HttpPost]
+        public ActionResult<User> FollowUser([FromBody] User userDto)
+        {
+            _context.User.Add(userDto);
+            try
+            {
+                _context.SaveChanges();
+            } catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+            return StatusCode(201);
+        }
+
+        [HttpPost]
+        public ActionResult<User> FollowSDF([FromBody] SDG sdgDto)
+        {
+            _context.SDG.Add(sdgDto);
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+            return StatusCode(201);
         }
     }
 }
