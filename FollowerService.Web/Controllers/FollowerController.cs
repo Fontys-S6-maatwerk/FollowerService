@@ -27,10 +27,11 @@ namespace FollowerService.Web.Controllers
         [Route("online")]
         public string checkOnline()
         {
-            return "Check if API is availabe";
+            return "Follower service is online";
         }
 
         [HttpPost]
+        [Route("followuser")]
         public ActionResult<User> FollowUser([FromBody] User userDto)
         {
             _context.User.Add(userDto);
@@ -46,6 +47,7 @@ namespace FollowerService.Web.Controllers
         }
 
         [HttpPost]
+        [Route("followsdg")]
         public ActionResult<User> FollowSDF([FromBody] SDG sdgDto)
         {
             _context.SDG.Add(sdgDto);
@@ -59,6 +61,22 @@ namespace FollowerService.Web.Controllers
             }
 
             return StatusCode(201);
+        }
+
+        [HttpDelete]
+        [Route("unfollowuser")]
+        public ActionResult<User> UnfollowUser([FromBody] User user)
+        {
+            _context.User.Remove(user);
+            try
+            {
+                _context.SaveChanges();
+            } 
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+            return StatusCode(200);
         }
     }
 }
