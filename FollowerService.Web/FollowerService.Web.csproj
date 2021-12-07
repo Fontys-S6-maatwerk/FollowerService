@@ -4,11 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>ec4ba5f5-bb3d-4a42-adbc-2f1e4a26f33f</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <StartupObject>FollowerService.Web.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FollowerService.Data\FollowerService.Data.csproj" />
   </ItemGroup>
 
 </Project>
