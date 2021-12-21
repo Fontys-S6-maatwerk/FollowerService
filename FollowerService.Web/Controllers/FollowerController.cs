@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace FollowerService.Web.Controllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/[controller]")]
     public class FollowerController : ControllerBase
     {
 
