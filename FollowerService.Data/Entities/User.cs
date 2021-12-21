@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FollowerService.Data.Entities
 {
-    public class User : BaseEntity
+    public class User
     {
         public Guid userId { get; set; }
 
